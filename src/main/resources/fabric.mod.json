@@ -8,10 +8,9 @@
 		"radwl"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/radwl/instant-sneak"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/instant-sneak/icon.png",
 	"environment": "*",
 	"entrypoints": {
