@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "net.radwl.instantsneak.mixin.client",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "CameraClientMixin",
+    "ClientPlayNetworkHandlerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixins": [
+    "EntityMixin"
+  ]
+}

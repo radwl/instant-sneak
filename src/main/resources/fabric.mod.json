@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "instant-sneak",
+	"version": "${version}",
+	"name": "Instant Sneak",
+	"description": "Removes the camera animation when sneaking/crouching, making it instant and highly configurable.",
+	"authors": [
+		"radwl"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/instant-sneak/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"client": [
+			"net.radwl.instantsneak.InstantSneakClient"
+		]
+	},
+	"mixins": [
+		{
+			"config": "instant-sneak.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
