@@ -11,7 +11,8 @@ repositories {
 
 dependencies {
     // Mod dependencies
-    implementation ("eu.midnightdust:midnightlib:${project.midnightlib_version}-neoforge")
+    // We use jarJar (jar-in-jar) because neoforge does NOT automatically bundle dependencies with the jar
+    jarJar(implementation("eu.midnightdust:midnightlib:${project.midnightlib_version}-neoforge"))
 }
 
 neoForge {
