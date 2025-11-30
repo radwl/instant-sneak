@@ -3,6 +3,17 @@ plugins {
     id 'net.neoforged.moddev'
 }
 
+repositories {
+    maven {
+        url = "https://maven.midnightdust.eu/releases"
+    }
+}
+
+dependencies {
+    // Mod dependencies
+    implementation ("eu.midnightdust:midnightlib:${project.midnightlib_version}-neoforge")
+}
+
 neoForge {
     version = neoforge_version
     // Automatically enable neoforge AccessTransformers if the file exists

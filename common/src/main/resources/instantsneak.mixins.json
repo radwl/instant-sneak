@@ -7,7 +7,7 @@
   "mixins": [],
   "client": [
     "CameraClientMixin",
-    "ClientPacketListener",
+    "ClientPacketListenerMixin",
     "EntityMixin"
   ],
   "server": [],

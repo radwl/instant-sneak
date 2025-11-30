@@ -1,0 +1,8 @@
+{
+  "instantsneak.midnightconfig.title": "Configure Instant Sneak",
+  "instantsneak.midnightconfig.INSTANT": "Instant",
+  "instantsneak.midnightconfig.ANIMATION_SPEED": "Animation Speed",
+  "instantsneak.midnightconfig.ANIMATION_SPEED.tooltip": "Controls the speed of the vanilla sneaking animation.",
+  "instantsneak.midnightconfig.SNEAK_HEIGHT": "Sneak Height",
+  "instantsneak.midnightconfig.SNEAK_HEIGHT.tooltip": "Controls the camera Y position while crouching.\n0.0 matches the modern vanilla height, 1.0 matches the old (pre-1.14) sneak height. \nMaximum value is 0.75 to prevent camera clipping."
+}

@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 import org.objectweb.asm.Opcodes;
 
 @Mixin(Camera.class)
-public class CameraClientMixin {
+public abstract class CameraClientMixin {
 
     @Unique
     private boolean instantsneak$wasSneaking = false;
@@ -26,7 +26,7 @@ public class CameraClientMixin {
 
     @Redirect(method = "tick", at = @At(value = "FIELD", target = "Lnet/minecraft/client/Camera;eyeHeight:F", opcode = Opcodes.PUTFIELD))
     public void instantSneak(Camera obj, float value) {
-        if (entity instanceof Player && !ModConfig.ANIMATION_ENABLED) {
+        if (entity instanceof Player && ModConfig.INSTANT) {
             if (entity.getPose() == Pose.CROUCHING) {
                 instantsneak$wasSneaking = true;
                 eyeHeightOld = eyeHeight = entity.getEyeHeight();
@@ -37,7 +37,7 @@ public class CameraClientMixin {
                 return;
             }
         }
-        eyeHeight = this.eyeHeight + (this.entity.getEyeHeight() - this.eyeHeight) * (float) ModConfig.ANIMATION_SPEED;
+        eyeHeight += (this.entity.getEyeHeight() - this.eyeHeight) * (float)(ModConfig.ANIMATION_SPEED / 2.0);
     }
 
 }

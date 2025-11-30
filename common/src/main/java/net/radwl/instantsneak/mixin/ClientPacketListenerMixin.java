@@ -3,6 +3,7 @@ package net.radwl.instantsneak.mixin;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientCommonPacketListenerImpl;
 import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.client.multiplayer.ClientPacketListener;
 import net.minecraft.client.multiplayer.CommonListenerCookie;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundSetEntityDataPacket;
@@ -16,13 +17,13 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 import java.util.List;
 
-@Mixin(net.minecraft.client.multiplayer.ClientPacketListener.class)
-public abstract class ClientPacketListener extends ClientCommonPacketListenerImpl {
+@Mixin(ClientPacketListener.class)
+public abstract class ClientPacketListenerMixin extends ClientCommonPacketListenerImpl {
 
     @Shadow
     private ClientLevel level;
 
-    protected ClientPacketListener(Minecraft client, Connection connection, CommonListenerCookie connectionState) {
+    protected ClientPacketListenerMixin(Minecraft client, Connection connection, CommonListenerCookie connectionState) {
         super(client, connection, connectionState);
     }
 

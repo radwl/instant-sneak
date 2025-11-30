@@ -16,6 +16,12 @@ neoForge {
     }
 }
 
+repositories {
+    maven {
+        url = "https://maven.midnightdust.eu/releases"
+    }
+}
+
 dependencies {
     compileOnly group: 'org.spongepowered', name: 'mixin', version: '0.8.5'
     // fabric and neoforge both bundle mixinextras, so it is safe to use it in common
@@ -25,6 +31,9 @@ dependencies {
     // ASM is already included by org.spongepowered.mixin,
     // but we must add it as a dependency, otherwise it's not usable in common.
     compileOnly 'org.ow2.asm:asm-tree:9.6'
+
+    // Mod dependencies
+    implementation ("eu.midnightdust:midnightlib:${project.midnightlib_version}-neoforge")
 }
 
 configurations {
