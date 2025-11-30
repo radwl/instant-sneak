@@ -21,6 +21,10 @@ dependencies {
     // fabric and neoforge both bundle mixinextras, so it is safe to use it in common
     compileOnly group: 'io.github.llamalad7', name: 'mixinextras-common', version: '0.3.5'
     annotationProcessor group: 'io.github.llamalad7', name: 'mixinextras-common', version: '0.3.5'
+
+    // ASM is already included by org.spongepowered.mixin,
+    // but we must add it as a dependency, otherwise it's not usable in common.
+    compileOnly 'org.ow2.asm:asm-tree:9.6'
 }
 
 configurations {
